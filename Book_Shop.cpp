@@ -30,9 +30,10 @@ void solve() {
         // for(ll _x = books[i].first ; _x <= x ; ++_x) {
         //     dp[_x] = max(dp[_x - books[i].first] + books[i].second, dp[_x]); 
         // }
-        debug_vector(dp); 
+        ///This won't work. Explanation below.
+        // debug_vector(dp); 
     }
-    debug_vector(dp);
+    // debug_vector(dp);
     cout << dp[x] << "\n"; 
     return;
 }
@@ -57,5 +58,5 @@ int main() {
 //// If we iterated from 5 to x(which is 10), then dp[5] would be 8 before going to dp[10], so dp[10] is going to consider dp[5] + 8  as 16, taking 5 twice.
 //// This would be problematic as we can't take two of the same books. 
 //// By iterating from x to current price (say 5), we are making sure that each dp[j - curr_price] considers the previous iteration or old value which didnt consider the current price point yet.
-//// Good problem. 
+//// Good problem. Accepted.
 
