@@ -37,6 +37,34 @@ void solve() {
     return;
 }
 
+void solve2() { 
+    ll n ; 
+    cin >> n ; 
+    vector< ll > a(n), cnt(n+1); 
+    for(auto &x : a ) { 
+        cin >> x; cnt[x]++; 
+    }
+    bool ok = true;
+    for(ll i = 1; i <= n; ++i) { 
+        if(cnt[i]%i) { 
+            ok &= false; break; 
+        }
+    } 
+    if(!ok) { 
+        cout << "-1\n"; return;
+    }
+    vector< ll > vals(n+1);
+    ll curr = 1; 
+    for(auto &x : a) { 
+        if(cnt[x]%x == 0) { 
+            vals[x] = curr++;
+        }
+        cout << vals[x] << " "; cnt[x]--; 
+    }
+    cout << "\n";
+    return; 
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -44,7 +72,7 @@ int main() {
     ll tt;
     cin >> tt;
     while (tt--) {
-        solve();
+        solve2();
     }
     return 0;
 }
