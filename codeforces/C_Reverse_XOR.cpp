@@ -42,7 +42,7 @@ void solve() {
     return; 
 }
 
-/// so I need a palindrome of even length. Right ?
+/// so I need a palindrome, even length is ok. If odd, I need the middle element to be 0.
 /// Good problem with a twist.
 /// accepted.
 
